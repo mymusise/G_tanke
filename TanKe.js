@@ -1,6 +1,6 @@
 function createTanke (x1,y1,stagea) {
-	var texture = PIXI.Texture.fromImage("tanke.jpg");
-	var texture2= PIXI.Texture.fromImage("fire.jpg");
+	var texture = PIXI.Texture.fromImage("sources/tanke.jpg");
+	var texture2= PIXI.Texture.fromImage("sources/fire.jpg");
 	var newTanke=new PIXI.Sprite(texture);;
 	newTanke.anchor.x = 0.5;
     newTanke.anchor.y = 0.5;
