@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tanke</title>
+</head>
+<script src="../../bin/pixi.dev.js"></script>
+<script src="box2d.min.js"></script>
+<script src="World.js"></script>
+<script src="TanKe.js"></script>
+<script src="Key.js"></script>
+<body>
+<div id='mainFrame'></div>
+<script type="text/javascript">
+	var tankeworld=createWorld();
+	var stagea = new PIXI.Stage(0x00FF99);
+	var renderer = PIXI.autoDetectRenderer(400, 260);
+	var frame=document.getElementById("mainFrame");
+	frame.appendChild(renderer.view);
+	requestAnimFrame(animate);
+	//
+	document.onkeydown = KeyDown;
+	//add body
+	var tanke1=createTanke(100,200,stagea);
+	console.log(tanke1.spritetype);
+	//
+	function animate (argument) {
+		requestAnimFrame(animate);
+		tankeworld.Step(timeStep, iteration);
+		//do something
+		draw();
+		renderer.render(stagea);
+	}
+</script>
+</body>
+</html>
