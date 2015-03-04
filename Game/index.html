@@ -12,19 +12,21 @@
 <body>
 <div id='mainFrame'></div>
 <script type="text/javascript">
+	var World_wide=400;
+	var World_high=300;
 	var tankeworld=createWorld();
 	var stagea = new PIXI.Stage(0x00FF99);
-	var renderer = PIXI.autoDetectRenderer(400, 260);
+	var renderer = PIXI.autoDetectRenderer(World_wide, World_high);
 	var frame=document.getElementById("mainFrame");
 	frame.appendChild(renderer.view);
 
 	//
 	document.onkeydown = KeyDown;
 	//add body
-	var tanke1=createTanke(100,200,stagea,1);
-	var tanke2=createTanke(300,100,stagea,2);
+	var tanke1=createTanke(300,100,stagea,1);
+	var tanke2=createTanke(100,100,stagea,2);
 	tanke1.checkFire();
-	console.log(tanke1.spritetype);
+	console.log(tankeworld);
 	//
 
 </script>

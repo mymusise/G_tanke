@@ -8,22 +8,54 @@
         {
             tanke1.position.x-=2
         }
-        if (currKey==39)
+        else if (currKey==39)
         {
             tanke1.position.x+=2
         }
-        if (currKey==38)
+        else if (currKey==38)
         {
             tanke1.position.y-=2
         }
-        if (currKey==40)
+        else if (currKey==40)
         {
             tanke1.position.y+=2
         }
-        if (currKey==83)
+
+        else if (currKey==76)
         {
-            fire1=1;
+            tanke2.position.x+=2
+        }
+        else if (currKey==73)
+        {
+            tanke2.position.y-=2
+        }
+        else if (currKey==74)
+        {
+            tanke2.position.x-=2
+        }
+        else if (currKey==75)
+        {
+            tanke2.position.y+=2
+        }
+
+        else if (currKey==83)
+        {
+            console.log("before change:"+tankeworld.m_bodyCount)
+            console.log(stagea.children);
+            console.log(tanke1.fire.visible);
             tanke1.init_Fire();
-            
+            console.log("after change:"+tankeworld.m_bodyCount)
+            console.log(stagea.children);
+            console.log(tanke1.fire.visible);
+        }
+        else if (currKey==88)
+        {
+            console.log("before change:"+tankeworld.m_bodyCount)
+            console.log(stagea.children);
+            console.log(tanke1.fire.visible);
+            tanke2.init_Fire();
+            console.log("after change:"+tankeworld.m_bodyCount)
+            console.log(stagea.children);
+            console.log(tanke1.fire.visible);
         }
     }

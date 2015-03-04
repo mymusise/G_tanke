@@ -12,18 +12,29 @@ function createWorld (argument) {
     return world;
     // how many iteration for collisions calculations
 }
-function initRender (argument) {
 
-}
-function addBody(sprite, x, y, width, height, density) {
+function addBody(sprite, x, y, width, height, density,direction) {
         var shapeDef = new b2BoxDef();
         shapeDef.extents.Set(width * 0.5, height * 0.5);
         var bodyDef = new b2BodyDef();
         bodyDef.AddShape(shapeDef);
-        if (sprite.alpha>10)
-        {    
-            var basespeed = new b2Vec2(500, 0);
-            bodyDef.linearVelocity.SetV(basespeed);
+        if (sprite.alpha>=2)
+        {   
+            console.log(sprite.parent.rotation);
+            if (direction==0) {
+                var basespeed = new b2Vec2(500, 0);
+                bodyDef.linearVelocity.SetV(basespeed);
+                x=x+30
+            }
+            else if (direction==1){
+
+            }
+            else if (direction==2){
+
+            }
+            else if (direction==3){
+
+            }
         }
 
         bodyDef.position.Set(x, y);
