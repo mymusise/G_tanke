@@ -20,6 +20,12 @@ function addBody(sprite, x, y, width, height, density) {
         shapeDef.extents.Set(width * 0.5, height * 0.5);
         var bodyDef = new b2BodyDef();
         bodyDef.AddShape(shapeDef);
+        if (sprite.alpha>10)
+        {    
+            var basespeed = new b2Vec2(500, 0);
+            bodyDef.linearVelocity.SetV(basespeed);
+        }
+
         bodyDef.position.Set(x, y);
         if (density) {
             shapeDef.density = density;
@@ -27,6 +33,7 @@ function addBody(sprite, x, y, width, height, density) {
             shapeDef.restitution = 1.2;
             bodyDef.rotation = 0.1;
         }
+        bodyDef.motorSpeed   =0.3
         body = tankeworld.CreateBody(bodyDef);
         body.m_userData = sprite;
     }

@@ -7,6 +7,7 @@
 <script src="src/box2d.min.js"></script>
 <script src="World.js"></script>
 <script src="TanKe.js"></script>
+<script src="Renderer.js"></script>
 <script src="Key.js"></script>
 <body>
 <div id='mainFrame'></div>
@@ -16,20 +17,16 @@
 	var renderer = PIXI.autoDetectRenderer(400, 260);
 	var frame=document.getElementById("mainFrame");
 	frame.appendChild(renderer.view);
-	requestAnimFrame(animate);
+
 	//
 	document.onkeydown = KeyDown;
 	//add body
-	var tanke1=createTanke(100,200,stagea);
+	var tanke1=createTanke(100,200,stagea,1);
+	var tanke2=createTanke(300,100,stagea,2);
+	tanke1.checkFire();
 	console.log(tanke1.spritetype);
 	//
-	function animate (argument) {
-		requestAnimFrame(animate);
-		tankeworld.Step(timeStep, iteration);
-		//do something
-		draw();
-		renderer.render(stagea);
-	}
+
 </script>
 </body>
 </html>

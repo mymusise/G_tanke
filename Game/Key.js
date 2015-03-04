@@ -23,7 +23,7 @@
         if (currKey==83)
         {
             fire1=1;
-            init_Fire();
+            tanke1.init_Fire();
             
         }
     }
