@@ -6,6 +6,7 @@ function animate (argument) {
 	draw();
 	checkContact();
 	checkOutOfMap();
+    getData();
 	renderer.render(stagea);
 }
 function checkContact (argument) {
@@ -18,24 +19,25 @@ function checkContact (argument) {
                 var body2= c.GetShape2().GetBody();
                 id1=body1.m_userData.alpha;
                 id2=body.m_userData.alpha;
-                console.log(id1,id2);
-                if ((id1==2&id2==3))
-                {
+              
+                if((id2>=3&id1<=2)||(id1>=3&id2<=2)){
                     tankeworld.DestroyBody(body1);
                     tankeworld.DestroyBody(body2);
-                    stagea.getChildAt(id1-1).visable=false;
-                    stagea.removeChildAt(id1-1);
-                    stagea.removeChildAt(id2-2);
+                    var sprite1=body1.GetUserData();
+                    var sprite2=body2.GetUserData();
+                    sprite1.visible=false;
+                    sprite2.visible=false;
+                    console.log(sprite1,sprite2)
+                    stagea.removeChild(sprite1);
+                    stagea.removeChild(sprite2);
                     
                 }
-                else if((id2>=2&id1<=1)){
-                    var body_temp,sprite_temp;
-                    tankeworld.DestroyBody(body1);
-                    tankeworld.DestroyBody(body2);
-                    stagea.removeChild(body1.GetUserData());
-                    stagea.removeChild(body2.GetUserData());
-                    
-                }
+                // else if(){
+                //     tankeworld.DestroyBody(body1);
+                //     tankeworld.DestroyBody(body2);
+                //     stagea.removeChild(body1.GetUserData());
+                //     stagea.removeChild(body2.GetUserData());
+                // }
             }
         }
 }
@@ -46,11 +48,8 @@ function checkOutOfMap (argument) {
             if (sprite) {
                 if ((sprite.position.x>World_wide)||(sprite.position.x<0)||(sprite.position.y>World_high)||(sprite.position.y<0)) {
                 	tankeworld.DestroyBody(body);
-                	id=sprite.alpha-1;
-                    if(id==3)
-                        id-=1;
-                	stagea.getChildAt(id).visible=false;
-                	stagea.removeChildAt(id);
+                	sprite.visible=false;
+                	stagea.removeChild(sprite);
                 };
             }
 	}

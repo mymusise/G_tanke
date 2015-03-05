@@ -11,11 +11,7 @@ function createTanke (x1,y1,stagea,id) {
     newTanke.alpha=id;
     newTanke.direction=0;
     //action
-    newTanke.checkFire=function(argument) {
-        console.log('checkFire');
-    }
     newTanke.init_Fire=function(argument) {
-        this.fire=new PIXI.Sprite(texture2);
         y1=this.position.y;
         x1=this.position.x;
         this.fire.position.x = x1;
@@ -31,7 +27,7 @@ function createTanke (x1,y1,stagea,id) {
     newTanke.fire=new PIXI.Sprite(texture2);
     // newTanke.fire.alpha=newTanke.alpha+2;
     // newTanke.fire=null;
-    newTanke.fire.visible=true;
+    newTanke.fire.visible=false;
     stagea.addChild(newTanke);
     addBody(newTanke, x1, y1, 25, 37, 500.5);
     return newTanke;

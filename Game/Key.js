@@ -40,22 +40,16 @@
 
         else if (currKey==83)
         {
-            console.log("before change:"+tankeworld.m_bodyCount)
-            console.log(stagea.children);
-            console.log(tanke1.fire.visible);
-            tanke1.init_Fire();
-            console.log("after change:"+tankeworld.m_bodyCount)
-            console.log(stagea.children);
-            console.log(tanke1.fire.visible);
+            if(tanke1.fire.visible==false)
+            {
+                tanke1.init_Fire();
+            }
         }
         else if (currKey==88)
         {
-            console.log("before change:"+tankeworld.m_bodyCount)
-            console.log(stagea.children);
-            console.log(tanke1.fire.visible);
-            tanke2.init_Fire();
-            console.log("after change:"+tankeworld.m_bodyCount)
-            console.log(stagea.children);
-            console.log(tanke1.fire.visible);
+            if(tanke2.fire.visible==false)
+            {
+                tanke2.init_Fire();
+            }
         }
     }

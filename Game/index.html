@@ -7,13 +7,14 @@
 <script src="src/box2d.min.js"></script>
 <script src="World.js"></script>
 <script src="TanKe.js"></script>
+<script src="Interface.js"></script>
 <script src="Renderer.js"></script>
 <script src="Key.js"></script>
 <body>
 <div id='mainFrame'></div>
 <script type="text/javascript">
-	var World_wide=400;
-	var World_high=300;
+	var World_wide=600;
+	var World_high=400;
 	var tankeworld=createWorld();
 	var stagea = new PIXI.Stage(0x00FF99);
 	var renderer = PIXI.autoDetectRenderer(World_wide, World_high);
@@ -23,10 +24,8 @@
 	//
 	document.onkeydown = KeyDown;
 	//add body
-	var tanke1=createTanke(300,100,stagea,1);
-	var tanke2=createTanke(100,100,stagea,2);
-	tanke1.checkFire();
-	console.log(tankeworld);
+	var tanke1=createTanke(100,100,stagea,1);
+	var tanke2=createTanke(300,100,stagea,2);
 	//
 
 </script>
