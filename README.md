@@ -4,7 +4,7 @@ Happy code!
 
 This
 
-Comments:\n
+Comments:
 {
   position.x+A:"run_x:A",
   position.y+A:"run_y:A",
