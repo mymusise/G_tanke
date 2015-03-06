@@ -40,16 +40,10 @@
 
         else if (currKey==83)
         {
-            if(tanke1.fire.visible==false)
-            {
-                tanke1.init_Fire();
-            }
+                tanke1.goFire();
         }
         else if (currKey==88)
         {
-            if(tanke2.fire.visible==false)
-            {
-                tanke2.init_Fire();
-            }
+                tanke2.goFire();
         }
     }

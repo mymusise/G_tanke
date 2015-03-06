@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Tanke</title>
-</head>
+<script src="http://localhost:8086/socket.io/socket.io.js"></script>
 <script src="src/pixi.dev.js"></script>
 <script src="src/box2d.min.js"></script>
 <script src="World.js"></script>
@@ -10,6 +10,9 @@
 <script src="Interface.js"></script>
 <script src="Renderer.js"></script>
 <script src="Key.js"></script>
+
+</head>
+
 <body>
 <div id='mainFrame'></div>
 <script type="text/javascript">
@@ -27,6 +30,32 @@
 	var tanke1=createTanke(100,100,stagea,1);
 	var tanke2=createTanke(300,100,stagea,2);
 	//
+	var socket = io('http://127.0.0.1:8086');
+	socket.on('news', function (data) {
+	console.log(data);
+	var value_addr=data.search('%');
+	var player=data.slice(0,data.search('-'));
+	if (value_addr!=-1) {
+		var commant=data.slice(data.search('-')+1,value_addr);
+		var value=parseInt(data.slice(value_addr+1));
+	}
+	else{
+		var commant=data.slice(data.search('-')+1);
+	}
+	console.log(player,commant,value)
+	if (player=="player1") {
+		if (commant.slice(0,5)=='run_x') {
+			tanke1.position.x+=value;
+		}
+		else if(commant.slice(0,5)=='run_y'){
+			tanke1.position.y+=value;
+		}
+		else if(commant=='Fire_Hold'){
+			tanke1.goFire();
+		}
+	};
+	socket.emit('my other event', { my: 'mydata' });
+	});
 
 </script>
 </body>

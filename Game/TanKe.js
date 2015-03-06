@@ -11,16 +11,17 @@ function createTanke (x1,y1,stagea,id) {
     newTanke.alpha=id;
     newTanke.direction=0;
     //action
-    newTanke.init_Fire=function(argument) {
-        y1=this.position.y;
-        x1=this.position.x;
-        this.fire.position.x = x1;
-        this.fire.position.y = y1;
-        this.fire.alpha = this.alpha+2;
-        this.fire.visible=true;
-        stagea.addChild(this.fire);
-        addBody(this.fire, x1, y1, 25, 37, 500.5,this.direction);
-
+    newTanke.goFire=function(argument) {
+        if(this.fire.visible==false){
+            y1=this.position.y;
+            x1=this.position.x;
+            this.fire.position.x = x1;
+            this.fire.position.y = y1;
+            this.fire.alpha = this.alpha+2;
+            this.fire.visible=true;
+            stagea.addChild(this.fire);
+            addBody(this.fire, x1, y1, 25, 37, 500.5,this.direction);
+        }
 }
 
     //init newTanke fire

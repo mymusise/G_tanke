@@ -14,5 +14,4 @@ function getData (user) {
 		Enmey_position:tankes[0].position,
 		Enmey_firing:tankes[0].fire.visible
 	}
-	console.log(AllData);
 }

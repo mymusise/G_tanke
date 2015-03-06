@@ -27,7 +27,6 @@ function checkContact (argument) {
                     var sprite2=body2.GetUserData();
                     sprite1.visible=false;
                     sprite2.visible=false;
-                    console.log(sprite1,sprite2)
                     stagea.removeChild(sprite1);
                     stagea.removeChild(sprite2);
                     

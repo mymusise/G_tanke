@@ -6,7 +6,7 @@ var iteration = 1;
 function createWorld (argument) {
 	var worldAABB = new b2AABB();
     worldAABB.minVertex.Set(-400, -400);
-    worldAABB.maxVertex.Set(400, 400);
+    worldAABB.maxVertex.Set(600, 600);
     // create world
     var world = new b2World(worldAABB, gravity, doSleep);
     return world;
@@ -22,7 +22,7 @@ function addBody(sprite, x, y, width, height, density,direction) {
         {   
             console.log(sprite.parent.rotation);
             if (direction==0) {
-                var basespeed = new b2Vec2(500, 0);
+                var basespeed = new b2Vec2(800, 0);
                 bodyDef.linearVelocity.SetV(basespeed);
                 x=x+30
             }
