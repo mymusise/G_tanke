@@ -1,5 +1,5 @@
 function createTanke (x1,y1,stagea,id) {
-	var texture = PIXI.Texture.fromImage("sources/tanke.jpg");
+	var texture = PIXI.Texture.fromImage("sources/tanke_right.jpg");
 	var texture2= PIXI.Texture.fromImage("sources/fire.jpg");
 	var newTanke=new PIXI.Sprite(texture);;
 	newTanke.anchor.x = 0.5;
@@ -9,7 +9,7 @@ function createTanke (x1,y1,stagea,id) {
     newTanke.spritetype=1;
     newTanke.nofire=1;
     newTanke.alpha=id;
-    newTanke.direction=0;
+    newTanke.direction=1;//0->up 1->right 2->down 3->left
     //action
     newTanke.goFire=function(argument) {
         if(this.fire.visible==false){

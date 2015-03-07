@@ -1,4 +1,4 @@
-var doSleep = false;// body can sleep
+var doSleep = true;// body can sleep
 var gravity = new b2Vec2(0, 000);// define gravity
 var worldAABB=new b2AABB();
 var timeStep = 1 / 60;
@@ -42,7 +42,7 @@ function addBody(sprite, x, y, width, height, density,direction) {
             shapeDef.density = density;
             shapeDef.friction = 1.4;
             shapeDef.restitution = 1.2;
-            bodyDef.rotation = 0.1;
+            // bodyDef.rotation = 0.1;
         }
         bodyDef.motorSpeed   =0.3
         body = tankeworld.CreateBody(bodyDef);

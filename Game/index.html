@@ -29,33 +29,37 @@
 	//add body
 	var tanke1=createTanke(100,100,stagea,1);
 	var tanke2=createTanke(300,100,stagea,2);
+	var tanke3=createTanke(300,300,stagea,3);
 	//
-	var socket = io('http://127.0.0.1:8086');
-	socket.on('news', function (data) {
-	console.log(data);
-	var value_addr=data.search('%');
-	var player=data.slice(0,data.search('-'));
-	if (value_addr!=-1) {
-		var commant=data.slice(data.search('-')+1,value_addr);
-		var value=parseInt(data.slice(value_addr+1));
-	}
-	else{
-		var commant=data.slice(data.search('-')+1);
-	}
-	console.log(player,commant,value)
-	if (player=="player1") {
-		if (commant.slice(0,5)=='run_x') {
-			tanke1.position.x+=value;
-		}
-		else if(commant.slice(0,5)=='run_y'){
-			tanke1.position.y+=value;
-		}
-		else if(commant=='Fire_Hold'){
-			tanke1.goFire();
-		}
-	};
-	socket.emit('my other event', { my: 'mydata' });
-	});
+
+
+
+	// var socket = io('http://127.0.0.1:8086');
+	// socket.on('news', function (data) {
+	// console.log(data);
+	// var value_addr=data.search('%');
+	// var player=data.slice(0,data.search('-'));
+	// if (value_addr!=-1) {
+	// 	var commant=data.slice(data.search('-')+1,value_addr);
+	// 	var value=parseInt(data.slice(value_addr+1));
+	// }
+	// else{
+	// 	var commant=data.slice(data.search('-')+1);
+	// }
+	// console.log(player,commant,value)
+	// if (player=="player1") {
+	// 	if (commant.slice(0,5)=='run_x') {
+	// 		tanke1.position.x+=value;
+	// 	}
+	// 	else if(commant.slice(0,5)=='run_y'){
+	// 		tanke1.position.y+=value;
+	// 	}
+	// 	else if(commant=='Fire_Hold'){
+	// 		tanke1.goFire();
+	// 	}
+	// };
+	// socket.emit('my other event', { my: 'mydata' });
+	// });
 
 </script>
 </body>
