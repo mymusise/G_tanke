@@ -21,7 +21,7 @@ function checkContact (argument) {
                 id1=body1.m_userData.alpha;
                 id2=body.m_userData.alpha;
               
-                if((id2>=3&id1<=2)||(id1>=3&id2<=2)){
+                if((id2==3&&id1==2)||(id2==2&&id1==3)){
                     tankeworld.DestroyBody(body1);
                     tankeworld.DestroyBody(body2);
                     var sprite1=body1.GetUserData();
@@ -31,6 +31,29 @@ function checkContact (argument) {
                     stagea.removeChild(sprite1);
                     stagea.removeChild(sprite2);
                     
+                }
+                else if((id1==4&&id2==1)||(id1==1&&id2==4)){
+                    tankeworld.DestroyBody(body1);
+                    tankeworld.DestroyBody(body2);
+                    var sprite1=body1.GetUserData();
+                    var sprite2=body2.GetUserData();
+                    sprite1.visible=false;
+                    sprite2.visible=false;
+                    stagea.removeChild(sprite1);
+                    stagea.removeChild(sprite2);
+                    
+                }
+                else if((id1==11&&(id2>=3&&id2<=4))){
+                    tankeworld.DestroyBody(body2);
+                    var sprite2=body2.GetUserData();
+                    sprite2.visible=false;
+                    stagea.removeChild(sprite2);                    
+                }
+                else if((id2==11&&(id1>=3&&id1<=4))){
+                    tankeworld.DestroyBody(body1);
+                    var sprite1=body1.GetUserData();
+                    sprite1.visible=false;
+                    stagea.removeChild(sprite1);                    
                 }
                 // else if(){
                 //     tankeworld.DestroyBody(body1);

@@ -1,7 +1,7 @@
 function createTanke (x1,y1,stagea,id) {
 	var texture = PIXI.Texture.fromImage("sources/tanke_right.jpg");
 	var texture2= PIXI.Texture.fromImage("sources/fire.jpg");
-	var newTanke=new PIXI.Sprite(texture);;
+	var newTanke=new PIXI.Sprite(texture);
 	newTanke.anchor.x = 0.5;
     newTanke.anchor.y = 0.5;
     newTanke.position.x = x1;
@@ -20,7 +20,7 @@ function createTanke (x1,y1,stagea,id) {
             this.fire.alpha = this.alpha+2;
             this.fire.visible=true;
             stagea.addChild(this.fire);
-            addBody(this.fire, x1, y1, 25, 37, 500.5,this.direction);
+            addBody(this.fire, x1, y1, 15, 15, 0.1,this.direction);
         }
 }
 
@@ -31,7 +31,7 @@ function createTanke (x1,y1,stagea,id) {
     newTanke.fire.visible=false;
     newTanke.fire.alpha=newTanke.alpha+2;
     stagea.addChild(newTanke);
-    addBody(newTanke, x1, y1, 25, 37, 500.5);
+    addBody(newTanke, x1, y1, 45, 45, 500.5);
     return newTanke;
     
 
