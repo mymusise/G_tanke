@@ -7,7 +7,7 @@ function animate (argument) {
 	checkContact();
 	checkOutOfMap();
     getData();
-    tanke3.rotation-=0.1;
+    // console.log(tanke1.position.x,tanke1.position.y)
 	renderer.render(stagea);
 }
 function checkContact (argument) {

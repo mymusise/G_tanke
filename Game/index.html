@@ -6,6 +6,7 @@
 <script src="src/pixi.dev.js"></script>
 <script src="src/box2d.min.js"></script>
 <script src="World.js"></script>
+<script src="Map.js"></script>
 <script src="TanKe.js"></script>
 <script src="Interface.js"></script>
 <script src="Renderer.js"></script>
@@ -26,10 +27,11 @@
 
 	//
 	document.onkeydown = KeyDown;
+	createMap();
 	//add body
 	var tanke1=createTanke(100,100,stagea,1);
 	var tanke2=createTanke(300,100,stagea,2);
-	var tanke3=createTanke(300,300,stagea,3);
+	// var tanke3=createTanke(300,300,stagea,3);
 	//
 
 

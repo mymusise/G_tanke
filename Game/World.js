@@ -1,4 +1,4 @@
-var doSleep = true;// body can sleep
+var doSleep = false;// body can sleep
 var gravity = new b2Vec2(0, 000);// define gravity
 var worldAABB=new b2AABB();
 var timeStep = 1 / 60;
@@ -18,21 +18,30 @@ function addBody(sprite, x, y, width, height, density,direction) {
         shapeDef.extents.Set(width * 0.5, height * 0.5);
         var bodyDef = new b2BodyDef();
         bodyDef.AddShape(shapeDef);
-        if (sprite.alpha>=2)
+        if (sprite.alpha>=2&&sprite.alpha<10)
         {   
             console.log(sprite.parent.rotation);
             if (direction==0) {
-                var basespeed = new b2Vec2(800, 0);
+                var basespeed = new b2Vec2(0, -800);
                 bodyDef.linearVelocity.SetV(basespeed);
-                x=x+30
+                y=y-40
             }
             else if (direction==1){
+                var basespeed = new b2Vec2(800, 0);
+                bodyDef.linearVelocity.SetV(basespeed);
+                x=x+35
 
             }
             else if (direction==2){
+                var basespeed = new b2Vec2(0, 800);
+                bodyDef.linearVelocity.SetV(basespeed);
+                y=y+40
 
             }
             else if (direction==3){
+                var basespeed = new b2Vec2(-800, 0);
+                bodyDef.linearVelocity.SetV(basespeed);
+                x=x-35
 
             }
         }
@@ -47,6 +56,8 @@ function addBody(sprite, x, y, width, height, density,direction) {
         bodyDef.motorSpeed   =0.3
         body = tankeworld.CreateBody(bodyDef);
         body.m_userData = sprite;
+        console.log(body);
+        return body;
     }
 
 function draw() {
