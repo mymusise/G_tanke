@@ -6,7 +6,7 @@ var iteration = 1;
 function createWorld (argument) {
 	var worldAABB = new b2AABB();
     worldAABB.minVertex.Set(-400, -400);
-    worldAABB.maxVertex.Set(600, 600);
+    worldAABB.maxVertex.Set(620, 620);
     // create world
     var world = new b2World(worldAABB, gravity, doSleep);
     return world;
@@ -24,24 +24,24 @@ function addBody(sprite, x, y, width, height, density,direction) {
             if (direction==0) {
                 var basespeed = new b2Vec2(0, -800);
                 bodyDef.linearVelocity.SetV(basespeed);
-                y=y-40
+                y=y-30
             }
             else if (direction==1){
                 var basespeed = new b2Vec2(800, 0);
                 bodyDef.linearVelocity.SetV(basespeed);
-                x=x+35
+                x=x+25
 
             }
             else if (direction==2){
                 var basespeed = new b2Vec2(0, 800);
                 bodyDef.linearVelocity.SetV(basespeed);
-                y=y+40
+                y=y+30
 
             }
             else if (direction==3){
                 var basespeed = new b2Vec2(-800, 0);
                 bodyDef.linearVelocity.SetV(basespeed);
-                x=x-35
+                x=x-25
 
             }
         }
@@ -50,10 +50,11 @@ function addBody(sprite, x, y, width, height, density,direction) {
         if (density) {
             shapeDef.density = density;
             shapeDef.friction = 1.4;
-            shapeDef.restitution = 1.2;
             // bodyDef.rotation = 0.1;
         }
-        bodyDef.motorSpeed   =0.3
+            shapeDef.restitution = 1.2;
+        
+        bodyDef.motorSpeed   =0.8
         body = tankeworld.CreateBody(bodyDef);
         body.m_userData = sprite;
         console.log(body);

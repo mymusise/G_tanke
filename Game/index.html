@@ -6,6 +6,7 @@
 <script src="src/pixi.dev.js"></script>
 <script src="src/box2d.min.js"></script>
 <script src="World.js"></script>
+<script src="Map_Class.js"></script>
 <script src="Map.js"></script>
 <script src="TanKe.js"></script>
 <script src="Interface.js"></script>
@@ -17,8 +18,8 @@
 <body>
 <div id='mainFrame'></div>
 <script type="text/javascript">
-	var World_wide=600;
-	var World_high=400;
+	var World_wide=620;
+	var World_high=620;
 	var tankeworld=createWorld();
 	var stagea = new PIXI.Stage(0x00FF99);
 	var renderer = PIXI.autoDetectRenderer(World_wide, World_high);
@@ -31,6 +32,8 @@
 	//add body
 	var tanke1=createTanke(100,300,stagea,1);
 	var tanke2=createTanke(300,100,stagea,2);
+	tanke1.m_rotation=20;
+	console.log(tanke1);
 	// var tanke3=createTanke(300,300,stagea,3);
 	//
 
