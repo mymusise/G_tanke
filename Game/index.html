@@ -2,21 +2,73 @@
 <html>
 <head>
 	<title>Tanke</title>
+<meta charset="utf-8"/>
+<link rel="stylesheet" href="src/lib/codemirror.css">
+<link rel="stylesheet" href="src/addon/hint/show-hint.css">
+<link rel="stylesheet" href="src/addon/fold/foldgutter.css" />
+<script src="src/lib/codemirror.js"></script>
+<script src="src/addon/hint/show-hint.js"></script>
+<script src="src/addon/hint/javascript-hint.js"></script>
+<script src="src/mode/javascript/javascript.js"></script>
+<script src="src/addon/fold/foldcode.js"></script>
+<script src="src/addon/fold/foldgutter.js"></script>
+<script src="src/addon/fold/brace-fold.js"></script>
+<script src="src/addon/fold/xml-fold.js"></script>
+<script src="src/addon/fold/comment-fold.js"></script>
+<script src="src/mode/xml/xml.js"></script>
+
 <script src="http://localhost:8086/socket.io/socket.io.js"></script>
 <script src="src/pixi.dev.js"></script>
 <script src="src/box2d.min.js"></script>
 <script src="World.js"></script>
-<script src="Map_Class.js"></script>
-<script src="Map.js"></script>
-<script src="TanKe.js"></script>
 <script src="Interface.js"></script>
 <script src="Renderer.js"></script>
 <script src="Key.js"></script>
+<script src="Map_Class.js"></script>
+<script src="Map.js"></script>
+<script src="TanKe.js"></script>
+
+<style type="text/css">
+	div{
+		float: left;
+	}
+</style>
 
 </head>
 
 <body>
+<div id="main">
 <div id='mainFrame'></div>
+<div id="editFrame">
+<input type="submit" value="Submit"></input>
+<input type="submit" value="DeBug"></input>
+
+<form style="width:500px;">
+	<!-- Some random JS code placed in the textarea for demo purposes -->
+	<textarea id="code" name="code">
+		console.log("Happy code")
+	</textarea>
+</form>
+
+</div>
+<script type="text/javascript">
+	window.onload = function() {
+		CodeMirror.commands.autocomplete = function(cm) {
+		    CodeMirror.showHint(cm, CodeMirror.hint.javascript);
+		};
+		window.editor = CodeMirror.fromTextArea(code, {
+		    mode: "javascript",
+		    lineNumbers: true,
+		    lineWrapping: true,
+		    extraKeys: {"Ctrl-Space": "autocomplete"},
+		    foldGutter: {
+		        rangeFinder: new CodeMirror.fold.combine(CodeMirror.fold.brace, CodeMirror.fold.comment)
+		    },
+		    gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
+		});
+		};
+</script>
+
 <script type="text/javascript">
 	var World_wide=620;
 	var World_high=620;
@@ -32,7 +84,7 @@
 	//add body
 	var tanke1=createTanke(100,300,stagea,1);
 	var tanke2=createTanke(300,100,stagea,2);
-	tanke1.m_rotation=20;
+	tanke1.m_rotation=0;
 	console.log(tanke1);
 	// var tanke3=createTanke(300,300,stagea,3);
 	//
@@ -67,5 +119,6 @@
 	// });
 
 </script>
+
 </body>
 </html>

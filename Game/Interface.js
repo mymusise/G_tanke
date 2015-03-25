@@ -1,10 +1,10 @@
 function getData (user) {
 	// body...
-	// console.log(tanke1,tanke2)
+	// console.log(tanke1.GetUserData,tanke2.GetUserData)
 	if (user=='player1') {
-		tankes=[tanke1,tanke2]
+		tankes=[tanke1.GetUserData(),tanke2.GetUserData()]
 	} else{
-		tankes=[tanke2,tanke1]
+		tankes=[tanke2.GetUserData(),tanke1.GetUserData()]
 	};
 	var AllData={MyData:'',EnmeyData:'',mapData:''}
 	AllData.MyData={My_position:tankes[0].position,

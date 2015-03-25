@@ -31,9 +31,9 @@ function createTanke (x1,y1,stagea,id) {
 	newTanke.fire.visible=false;
 	newTanke.fire.alpha=newTanke.alpha+2;
 	stagea.addChild(newTanke);
-	addBody(newTanke, x1, y1, 30, 30, 500.5);
-	return newTanke;
-	
+	body=addBody(newTanke, x1, y1, 30, 30, 500.5);
+	// return newTanke;
+    return body;	
 
 }
 
