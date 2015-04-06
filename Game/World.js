@@ -20,7 +20,7 @@ function addBody(sprite, x, y, width, height, density,direction) {
         bodyDef.AddShape(shapeDef);
         if (sprite.alpha>=2&&sprite.alpha<10)
         {   
-            console.log(sprite.parent.rotation);
+            // console.log(sprite.parent.rotation);
             if (direction==0) {
                 var basespeed = new b2Vec2(0, -800);
                 bodyDef.linearVelocity.SetV(basespeed);
@@ -57,7 +57,6 @@ function addBody(sprite, x, y, width, height, density,direction) {
         bodyDef.motorSpeed   =0.8
         body = tankeworld.CreateBody(bodyDef);
         body.m_userData = sprite;
-        console.log(body);
         return body;
     }
 

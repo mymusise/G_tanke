@@ -1,3 +1,5 @@
+
+
 function getData (user) {
 	// body...
 	// console.log(tanke1.GetUserData,tanke2.GetUserData)

@@ -39,7 +39,6 @@ function createMap (stage) {
 	for (i=0; i < 3; i++) {
 		for(j=0;j<5;j++)
 		{
-			console.log(map1[i][j]);
 			if (map1[i][j]==1){
 				var block=new PIXI.Sprite(block_texture);
 				block.position.x=10+j*block_wide+block_wide/2;
