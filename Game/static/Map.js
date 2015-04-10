@@ -36,8 +36,8 @@ function createMap (stage) {
 	var block_texture= PIXI.Texture.fromImage("static/sources/zhuantou.jpg");
 	
 	var i,j;
-	for (i=0; i < 3; i++) {
-		for(j=0;j<5;j++)
+	for (i=0; i < 20; i++) {
+		for(j=0;j<20;j++)
 		{
 			if (map1[i][j]==1){
 				var block=new PIXI.Sprite(block_texture);
