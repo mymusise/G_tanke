@@ -13,3 +13,6 @@ python manage.py runserver
 After writing your code , you can click the 'submit' botton to run your AI 
 # 
 <h5>This project do not finish yeah.<p>if your have any problem,please mail me :)<a href="mailto:mymusise1@gmail.com?subject=selenium&amp;body=HI，mymusise.">mymusise1@gmail.com</a>）</p></h5>
+
+# demo page
+<a href='http://mymusise.com:8000/game/'>http://mymusise.com:8000/game/<a>
