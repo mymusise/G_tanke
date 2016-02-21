@@ -16,3 +16,10 @@ After writing your code , you can click the 'submit' botton to run your AI
 
 # demo page
 <a href='http://mymusise.com:8000/game/'>http://mymusise.com:8000/game/<a>
+
+#ScreenShot
+
+#####check the submit button then the little tank will run!
+
+![Alt Text](https://raw.githubusercontent.com/mymusise/G_tanke/master/resource/images/g_tank.jepg "Title" "width:700px")
+
